@@ -1,0 +1,74 @@
+form{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	display: flex;
+	flex-direction: column;
+	background: #666;
+	outline: 30px solid #666;
+	color: #fff;
+}
+h2{
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+label{
+	margin-left: 15%;
+	padding: 10px 0;
+}
+input{
+	margin: auto;
+	height: 30px;
+	width: 70%;
+	outline: none;
+	padding-left: 30px;
+}
+.checkVisiblity{
+	position: relative;
+	display: inline;
+}
+.checkVisiblity input{
+	margin-left: -15%;
+	height: 18px;
+}
+
+.checkVisiblity label{
+	position: absolute;
+	left: 25%;
+	top: -25%;
+}
+button{
+	border: none;
+	margin: auto;
+	margin-top: 20px;
+	height: 40px;
+	width: 50%;
+	color: white;
+	font-size: 18px;
+	background: #111;
+	cursor: pointer;
+}
+button:disabled{
+	opacity: .5;
+	cursor: not-allowed;
+}
+button:hover{
+	opacity: .8;
+}
+.invalidField{
+	border:  3px solid #d62121;
+}
+small{
+	color:#062121;
+	margin-left: 15%;
+}
+
+@media (min-width: 600px){
+	form{
+		width: 50%;
+		margin-left: 25%;
+	}
+}

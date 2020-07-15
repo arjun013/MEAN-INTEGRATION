@@ -1,0 +1,51 @@
+form{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20vh;
+	margin-bottom: 20vh;
+	display: flex;
+	flex-direction: column;
+	background: #666;
+	outline: 30px solid #666;
+	color: #fff;
+}
+h2{
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+label{
+	margin: auto;
+	padding: 10px 0;
+}
+input{
+	margin: auto;
+	height: 30px;
+	width: 70%;
+	outline: none;
+	padding-left: 30px;
+}
+button{
+	border: none;
+	margin: auto;
+	margin-top: 20px;
+	height: 40px;
+	width: 50%;
+	color: white;
+	font-size: 18px;
+	background: #111;
+	cursor: pointer;
+}
+button:hover{
+	opacity: .8;
+}
+
+
+
+@media (min-width: 600px){
+	form{
+		width: 50%;
+		margin-left: 25%;
+	}
+}

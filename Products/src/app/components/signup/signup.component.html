@@ -1,0 +1,73 @@
+
+
+<form  [formGroup]="loginForm" 
+(ngSubmit) = "addUser()" >
+	<h2>Sign Up</h2><hr>
+	<label>Name</label>
+	<input type="text" 
+	formControlName="name" 
+	[class.invalidField]=
+		"loginForm.get('name').invalid &&loginForm.get('name').touched"
+	required>
+
+	<label>Email</label>
+	<input type="email" 
+	[class.invalidField]=
+		"loginForm.get('email').invalid &&loginForm.get('email').touched"
+	formControlName="email" required>
+
+	<div 
+	*ngIf="loginForm.get('email').invalid &&loginForm.get('email').touched">
+		<small 
+		*ngIf = "loginForm.get('email').errors?.required"> enter your email</small>
+		<small 
+		*ngIf = "loginForm.get('email').errors?.pattern"> not valid format</small>
+	</div>
+	<label>Mobile</label>
+	<input type="number"
+	[class.invalidField]=
+		"loginForm.get('mobile').invalid &&loginForm.get('mobile').touched"
+	formControlName="mobile" required >
+
+	<div 
+	*ngIf="loginForm.get('mobile').invalid &&loginForm.get('mobile').touched">
+		<small 
+		*ngIf = "loginForm.get('mobile').errors?.required"> enter your mobile no.</small>
+		<small 
+		*ngIf = "loginForm.get('mobile').errors?.min
+				||loginForm.get('mobile').errors?.max"> 10 digit needed</small>
+	</div>
+
+	<label>Username</label>
+	<input type="text" 
+	[class.invalidField]=
+		"loginForm.get('username').invalid &&loginForm.get('username').touched"
+	formControlName="username" required >
+
+	<label>Password</label>
+	<input 
+	[type]="showPassword?'text':'password'" 	
+	[class.invalidField]=
+		"loginForm.get('password').invalid &&loginForm.get('password').touched"
+	formControlName="password" required >
+
+	<div class="checkVisiblity">
+		<input type="checkbox" 
+		class="passVisibility" 
+		(change)="showPassword = !showPassword">
+		<label>Show Password</label>
+	</div>	
+
+	<div 
+	*ngIf="loginForm.get('password').invalid &&loginForm.get('password').touched">
+		<small 
+		*ngIf = "loginForm.get('password').errors?.minlength">Atleast 6 characters required</small>
+		<small 
+		*ngIf = "!loginForm.get('password').errors?.minlength&&loginForm.get('password').errors?.pattern"> Atleast 1 Smaall letter , 1 capital Letter , 1 Digit</small>
+	</div>
+
+
+
+	<button type="submit" 
+	[disabled]="loginForm.invalid" > Submit</button>
+</form>

@@ -1,0 +1,25 @@
+.main{
+	display: grid;
+	grid-template-areas: 
+				"header header"
+				"container container"
+				"container container"
+				"footer footer"
+}
+.header{
+	grid-area: header;
+	height: 10vh;
+	background: #333;
+	color: white;
+}
+
+.container{
+	grid-area: container;
+	min-height: 80vh;
+}
+
+.footer{
+	grid-area: footer;
+	height: 10vh;
+	background: #444;
+}

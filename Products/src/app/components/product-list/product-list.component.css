@@ -1,0 +1,105 @@
+h2{
+	text-align: center;
+	margin: 5vh 0;
+}
+
+table{
+	margin: 10vh auto;
+	width: 95%;
+	border-collapse: collapse;
+	color: white;
+	border: 3px solid black;
+}
+button{
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	padding: 5px;
+	background: #28a745;
+	text-transform: capitalize;
+	color: #fff;
+	margin-left: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+button:hover{
+	opacity: .8;
+}
+
+tr{
+	border-bottom: 2px solid #0007;
+}
+
+th{
+	background: #333;
+	color: #ddd;
+	padding: 10px 0;
+}
+
+td{
+	background: #f0f0f0;
+	color: darkslategrey;
+	padding: 10px 5px 10px 0;
+	text-align: center;
+}
+td,th{
+	font-size: 14px;
+}
+
+img{
+	display: block;
+	margin: auto;
+	max-width: 50px;
+	max-height: 50px;
+}
+@media (min-width: 700px){
+	table{
+		width: 90%;
+	}
+	th,td{
+		font-size: 18px;
+		padding: 20px 5px 20px 0;
+	}
+}
+
+.deleting{
+	position: fixed;
+	display: flex;
+	background: #0006;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+	
+}
+.permission{
+	background: #f1f1f1;
+	padding: 30px;
+	margin: auto;
+}
+
+.fa-edit{
+	text-decoration: none;
+	color: green;
+	cursor: pointer;
+	padding: 3px;
+}
+.fa-trash{
+	text-decoration: none;
+	color: darkred;
+	cursor: pointer;
+	padding: 3px;
+}
+.delete{
+	border-radius: 10px;
+	background: #000;
+	color: white;
+	padding: 10px;
+}
+.cancel{
+	border-radius: 10px;
+	background: #999;
+	color: #fff;
+	padding: 10px;
+}

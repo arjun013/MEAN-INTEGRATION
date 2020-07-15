@@ -1,0 +1,40 @@
+<nav class="navbar">
+	<h3>PRODUCTS</h3>
+	<button class="nav-icon" (click)="navChange()">
+		<div class="ham"></div>
+		<div class="ham"></div>
+		<div class="ham"></div>
+	</button>	
+	<ul class="navbar-nav" [class.responsive]="navChangeValid">
+		<li class="nav-item">
+			<a routerLink="/" 
+			[routerLinkActiveOptions]="{ exact: true }" 
+			routerLinkActive="active" >Products </a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" routerLink="/add"
+			 routerLinkActive="active"
+			 *ngIf="_authService.loggedIn()">Add Product </a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link"
+			 *ngIf="!_authService.loggedIn()"  
+			 routerLink="/login" 
+			 routerLinkActive="active">Login </a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" 
+			*ngIf="!_authService.loggedIn()"  
+			routerLink="/signup" 
+			routerLinkActive="active">Sign Up </a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" 
+			*ngIf="_authService.loggedIn()" 
+			(click) = "logoutUser()"  
+			routerLink="/" >Logout </a>
+		</li>
+	</ul>
+
+
+</nav>

@@ -1,0 +1,42 @@
+
+h2{
+	text-align: center;
+	margin-top: 5vh;
+}
+table{
+	margin: 5vh auto;
+	width: 95%;
+	border-collapse: collapse;
+	color: black;
+	border: 3px solid black;
+}
+td{
+	position: relative;
+	text-align: center;
+	padding: 20px;
+}
+input{
+	height: 30px;
+	padding: 5px 20px;
+}
+button{
+	position: absolute;
+	top: 0;
+	left: -30px;
+	outline: none;
+	border: none;
+	background: #111;
+	padding: 8px 25px;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	cursor: pointer;
+}
+ button:hover{
+ 	opacity: .9;
+ }
+
+ button:disabled{
+ 	opacity: .6;
+ 	cursor: not-allowed;
+ }

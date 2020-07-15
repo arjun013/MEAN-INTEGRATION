@@ -1,0 +1,46 @@
+<div>
+
+<h2>PRODUCTS</h2>
+<table>
+
+	<thead>
+		<tr>
+			<th>
+				<button type="button" (click)="imageToggle()">
+					{{ showImage?'Hide' :'show'}} Image
+				</button>
+			</th>
+			<th>Product</th>
+			<th>Code</th>
+			<th>Available</th>
+			<th>Price</th>
+			<th>Rating/5</th> 
+			<th *ngIf = "_authService.loggedIn()">Edit/Delete</th> 
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let product of products">
+			<td><img [src]="product.imageUrl" *ngIf ="showImage" ></td>
+			<td>{{product.productName}}</td>
+			<td>{{product.productCode}}</td>
+			<td>{{product.releaseDate}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.starRating}}</td>
+			<td *ngIf = "_authService.loggedIn()">
+				<a [routerLink]="'edit/'+product._id"><i class="fa fa-edit"></i></a>
+				<i class="fa fa-trash" aria-hidden="true" (click)="getDeletePermission(product._id)"></i>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="deleting" *ngIf = "deletePermission">
+	<div class="permission">
+		<h2>Are you sure</h2>
+		<button class="delete"  (click)="deleteProduct(deletableId)"> DELETE </button>
+		<button class="cancel" (click)="deletePermission=false"> CANCEL </button>	
+	</div>
+
+</div>
+	
+</div>

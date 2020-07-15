@@ -1,0 +1,46 @@
+
+<h2>Add A New Product</h2>
+<form (ngSubmit)="addProduct()" #productForm="ngForm">	
+	<table>
+		<tbody>
+			<tr>
+				<td><label>Product Id</label></td>
+				<td><input type="number" name="p_id" required [(ngModel)]="productItem.productId"></td>
+			</tr>
+			<tr class="form-group">
+				<td><label>Product Name</label></td>
+				<td><input type="text" name="p_name" required [(ngModel)]="productItem.productName"></td>
+			</tr>
+			<tr>
+				<td><label>Product Code</label></td>
+				<td><input type="text" name="p_code" required [(ngModel)]="productItem.productCode"></td>
+			</tr>
+			<tr>
+				<td><label>Product Date</label></td>
+				<td><input type="text" name="p_date" required [(ngModel)]="productItem.releaseDate"></td>
+			</tr>
+			<tr>
+				<td><label>Product Description</label></td>
+				<td><input type="text" name="p_description" required [(ngModel)]="productItem.description"></td>
+			</tr>
+			<tr>
+				<td><label>Product Price</label></td>
+				<td><input type="number" name="p_price" required [(ngModel)]="productItem.price"></td>
+			</tr>
+			<tr>
+				<td><label>Product Star Rating</label></td>
+				<td><input type="number" name="p_star" required [(ngModel)]="productItem.starRating"></td>
+			</tr>
+			<tr>
+				<td><label>Product Image URL</label></td>
+				<td><input type="text" name="p_imageUrl" required [(ngModel)]="productItem.imageUrl"></td>
+			</tr>
+			<tr><td></td><td><button [disabled]="productForm.form.invalid">
+				SUBMIT
+			</button></td></tr>
+			
+		</tbody>
+		
+	</table>
+
+</form>
